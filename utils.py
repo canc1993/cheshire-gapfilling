@@ -34,6 +34,7 @@ def create_pool():
             model = get_data(path, sample)
             model_pool.merge(model)
     cobra.io.write_sbml_model(model_pool, 'data/pools/comb_universe.xml')
+    print('done!')
 
 
 def get_data_from_pool(path, sample, model_pool_df):
