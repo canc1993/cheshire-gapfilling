@@ -62,3 +62,4 @@ def predict():
             common_rxns = list(bigg_rxns & set(score_df.index))
             common_score_df = score_df.T[common_rxns].T
             common_score_df.to_csv('./results/scores/' + sample[:-4] + '.csv')
+    print('done!')
