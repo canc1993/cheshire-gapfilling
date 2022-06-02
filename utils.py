@@ -38,7 +38,6 @@ def create_pool():
 
 
 def get_data_from_pool(path, sample, model_pool_df):
-    model = get_data(path, sample)
     rxns_df = pd.read_csv(path + '/reactions_w_gene_reaction_rule.csv')
     rxns = rxns_df.reaction[rxns_df.id == sample[:-4]].to_numpy()
     model_df = model_pool_df[rxns]
