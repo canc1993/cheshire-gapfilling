@@ -56,3 +56,4 @@ def validate():
     # write intermediate results to file
     output_file: str = "%s/%s" % (paras['OUTPUT_DIRECTORY'], paras['OUTPUT_FILENAME'])
     df_output.to_csv(output_file, index=False)
+    print('done!')
