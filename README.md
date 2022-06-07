@@ -8,14 +8,14 @@ Can Chen, Chen Liao, and Yang-Yu Liu. "Filling Gaps in Genome-scale Metabolic Mo
 ## System Requirements
 
 ### Hardware Requirements
-```CHESHIRE``` requires only a standard computer with enough RAM to support the operations defined by a user. For optimal performance, we recommend a computer with the following specs:
+The package requires only a standard computer with enough RAM to support the operations defined by a user. For optimal performance, we recommend a computer with the following specs:
 
 RAM: 16+ GB
 
 CPU: 4+ cores, 2+ GHz/core
 
 ### OS Requirements
-```CHESHIRE``` is supported for macOS, and has been tested on the following systems:
+The package is supported for macOS, and has been tested on the following systems:
 
 macOS Big Sur (version 11.6.2)
 
@@ -23,7 +23,7 @@ macOS Monterey (version 12.4)
 
 
 ### Python Dependencies
-```CHESHIRE``` depends on the Python scientific stack:
+The package depends on the Python scientific stack:
 
 ```
 cobra==0.22.1
@@ -38,17 +38,19 @@ tqdm==4.62.1
 ```
 
 ## Installation Guide
-```CHESHIRE``` can be simply installed from GitHub:
+The package can be simply installed from GitHub:
 
 ```
 git clone https://github.com/canc1993/cheshire-gapfilling.git
 ```
 
+Users are require to additionally install the ```cplex``` solver from IBM for running the package.
+
 ## Demo
 
-The file "main.py" is the main program for running the genome-scale metabolic model gap-filling experiments. 
-All the parameters are saved in the files "config.py" and "input_parameters.txt."
-The folder "data/gems" contains genome-scale metabolic models for gap-filling, and
-the folder "data/pools" contains reaction pools.
-The folder "results/scores" contains reaction scores produced by CHESHIRE, and
-the folder "results/gaps" contains a list of suggested reactions based on the reaction scores. 
+The file ```main.py``` is the main program for running the GEM gap-filling experiments. 
+All the parameters used in the package are saved in the files ```config.py``` and ```input_parameters.txt```.
+The folder ```data/gems``` contains two sample GEMS -- ```GCF_000005845.2``` and ```GCF_000160535.1``` -- for gap-filling, and
+the folder ```data/pools``` contains a reaction pool constructed from the BiGG database.
+The folder ```results/scores``` contains reaction scores produced by ```CHESHIRE```, and
+the folder ```results/gaps``` contains a list of suggested reactions based on the reaction scores. 
