@@ -8,7 +8,7 @@ Can Chen, Chen Liao, and Yang-Yu Liu. "Filling Gaps in Genome-scale Metabolic Mo
 ## System Requirements
 
 ### Hardware Requirements
-The package requires only a standard computer with enough RAM to support the operations defined by a user. For optimal performance, we recommend a computer with the following specs:
+The package requires only a standard computer with enough RAM to support the operations defined by users. For optimal performance, we recommend a computer with the following specs:
 
 RAM: 16+ GB
 
