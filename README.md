@@ -52,5 +52,5 @@ The file ```main.py``` is the main program for running the GEM gap-filling exper
 All the parameters used in the package are saved in the files ```config.py``` and ```input_parameters.txt```.
 The folder ```data/gems``` contains two sample GEMS -- ```GCF_000005845.2``` and ```GCF_000160535.1``` -- for gap-filling, and
 the folder ```data/pools``` contains a reaction pool constructed from the BiGG database.
-The folder ```results/scores``` contains reaction scores produced by ```CHESHIRE```, and
-the folder ```results/gaps``` contains a list of suggested reactions based on the reaction scores. 
+The folder ```results/scores``` contains candidate reaction scores produced by ```CHESHIRE```, and
+the folder ```results/gaps``` contains a list of suggested reactions based on the reaction scores and phnotypes. 
