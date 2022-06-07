@@ -41,7 +41,7 @@ tqdm==4.62.1
 ```CHESHIRE``` can be simply installed from GitHub:
 
 ```
-git clone
+git clone https://github.com/canc1993/cheshire-gapfilling.git
 ```
 
 ## Demo
