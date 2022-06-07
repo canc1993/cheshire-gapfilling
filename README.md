@@ -44,7 +44,7 @@ The package can be simply installed from GitHub:
 git clone https://github.com/canc1993/cheshire-gapfilling.git
 ```
 
-Users are require to additionally install the ```cplex``` solver from IBM for running the package.
+Users are required to additionally install the ```cplex``` solver from IBM for running the package.
 
 ## Demo
 
