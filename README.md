@@ -1,8 +1,7 @@
 # CHESHIRE
 ## Overview
 
-```CHESHIRE``` (Chebyshev Spectral Hyperlink Predictor) is a hyperlink prediction algorithm which can be used to gap-fill genome-scale metabolic models. 
-This package contains the source code of our paper:
+GEnome-scale Metabolic models (GEMs) are powerful tools to predict cellular metabolism and physiological states in living organisms. However, even highly curated GEMs have gaps (i.e., missing reactions) due to our imperfect knowledge of metabolic processes. Here we present a deep learning-based method -- **CHE**byshev **S**pctral **H**yperl**I**nk p**RE**dictor (```CHESHIRE```) -- to predict missing reactions of GEMs purely from the metabolic network topology. ```CHESHIRE``` takes a metabolic network and a pool of candidate reactions as the input and outputs confidence scores for candidate reactions. This package contains the source code of our paper:
 
 Can Chen, Chen Liao, and Yang-Yu Liu. "Filling Gaps in Genome-scale Metabolic Models through Deep Learning." BioRxiv (2022) [PDF].
 
@@ -38,7 +37,12 @@ torch_scatter==2.0.8
 tqdm==4.62.1
 ```
 
+## Installation Guide
+```CHESHIRE``` can be simply installed from GitHub:
 
+```
+git clone
+```
 
 ## Demo
 
