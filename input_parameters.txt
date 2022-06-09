@@ -8,7 +8,7 @@ SUBSTRATE_EX_RXNS,./data/others/substrate_exchange_reactions.csv
 NUM_CPUS,1
 EX_SUFFIX,_e
 RESOLVE_EGC,1
-OUTPUT_DIRECTORY,./results/suggestions
+OUTPUT_DIRECTORY,./results/gaps
 OUTPUT_FILENAME,suggested_gaps.csv
 FLUX_CUTOFF,1e-5
 ANAEROBIC,1
