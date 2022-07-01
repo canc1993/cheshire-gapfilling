@@ -28,18 +28,22 @@ def create_pool():
     print('merging GEMs with reaction pool...')
     path = 'data/gems'
     namelist = get_filenames(path)
-    model_pool = cobra.io.read_sbml_model('data/pools/bigg_universe.xml')
+    model_pool = cobra.io.read_sbml_model('data/pools/universe.xml')
     for sample in namelist:
         if sample.endswith('xml'):
             model = get_data(path, sample)
             model_pool.merge(model)
-    cobra.io.write_sbml_model(model_pool, 'data/pools/comb_universe.xml')
+    cobra.io.write_sbml_model(model_pool, 'results/universe/comb_universe.xml')
     print('done!')
 
 
 def get_data_from_pool(path, sample, model_pool_df):
-    rxns_df = pd.read_csv(path + '/reactions_w_gene_reaction_rule.csv')
-    rxns = rxns_df.reaction[rxns_df.id == sample[:-4]].to_numpy()
+    if os.path.exists(path + '/reactions_w_gene_reaction_rule.csv'):
+        rxns_df = pd.read_csv(path + '/reactions_w_gene_reaction_rule.csv')
+        rxns = rxns_df.reaction[rxns_df.id == sample[:-4]].to_numpy()
+    else:
+        model = get_data(path, sample)
+        rxns = np.array([rxn.id for rxn in model.reactions])
     model_df = model_pool_df[rxns]
     cols2use = model_pool_df.columns.difference(model_df.columns)
     return model_df, model_pool_df[cols2use]
