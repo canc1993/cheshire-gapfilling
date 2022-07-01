@@ -15,12 +15,7 @@ RAM: 16+ GB
 CPU: 4+ cores, 2+ GHz/core
 
 ### OS Requirements
-The package is supported for macOS, and has been tested on the following systems:
-
-macOS Big Sur (version 11.6.2)
-
-macOS Monterey (version 12.3, 12.4)
-
+The package has been tested on MacOS Big Sur (version 11.6.2) and Monterey (version 12.3, 12.4).
 
 ### Dependencies
 The package depends on the Python scientific stack:
@@ -42,7 +37,7 @@ Users are required to additionally install the ```cplex``` solver (https://www.i
 
 ## Usage
  
-Step 1. Download the package from GitHub and enter the folder:
+**Step 1**. Download the package from GitHub and enter the folder:
 
 ```
 git clone https://github.com/canc1993/cheshire-gapfilling.git
