@@ -34,6 +34,7 @@ pandas==1.3.2
 torch==1.9.0
 torch_geometric==1.7.2
 torch_scatter==2.0.8
+torch_sparse==0.6.11 
 tqdm==4.62.1
 ```
 
