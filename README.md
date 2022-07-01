@@ -49,7 +49,7 @@ Users are required to additionally install the ```cplex``` solver (https://www.i
 ## Demo
 
 The file ```main.py``` is the main program for running the GEM gap-filling experiments. 
-All the parameters used in the package are saved in the files ```config.py``` and ```input_parameters.txt```.
+All the parameters used in the package are saved in the files ```config.py``` (CHESHIRE parameters) and ```input_parameters.txt``` (phenotypic prediction parameters).
 The folder ```data/gems``` contains two sample GEMS -- ```GCF_000005845.2``` and ```GCF_000160535.1``` -- for gap-filling, and
 the folder ```data/pools``` contains a reaction pool constructed from the BiGG database.
 The folder ```results/scores``` contains candidate reaction scores produced by ```CHESHIRE```, and
