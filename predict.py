@@ -30,8 +30,8 @@ def predict():
     path = 'data/gems'
     namelist = get_filenames(path)
     # read reaction pool
-    bigg_pool = cobra.io.read_sbml_model('data/pools/bigg_universe.xml')
-    model_pool = cobra.io.read_sbml_model('data/pools/comb_universe.xml')
+    bigg_pool = cobra.io.read_sbml_model('data/pools/universe.xml')
+    model_pool = cobra.io.read_sbml_model('results/universe/comb_universe.xml')
     model_pool_df = create_stoichiometric_matrix(model_pool, array_type='DataFrame')
     for sample in namelist:
         if sample.endswith('.xml'):
