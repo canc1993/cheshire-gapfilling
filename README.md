@@ -36,17 +36,19 @@ tqdm==4.62.1
 Users are required to additionally install the ```cplex``` solver (https://www.ibm.com/analytics/cplex-optimizer) from IBM to run the package. Note that cplex only works with certain python versions (e.g., CPLEX_Studio12.10 has APIs for python3.6 an python3.7).
 
 ## Usage
+
+To run the demonstration, type "python3 main.py" in your terminal.
  
-**Step 1**. Download the package from GitHub and enter the folder:
+**Step 1. Download the package**
 
 ```
 git clone https://github.com/canc1993/cheshire-gapfilling.git
 cd cheshire-gapfilling
 ```
 
-Step 2. Prepare the input data in the directory ```cheshire-gapfilling/data```. We have provided a demonstration that 
+**Step 2. Prepare input files** 
 
-There are three folders within the directory ```cheshire-gapfilling/data```.
+All input files should be deposited to the directory ```cheshire-gapfilling/data```. There are three folders:
 
 The folder ```data/gems``` contains GEMs for gapfilling. An an example, we included two GEMs, ```GCF_000005845.2``` and ```GCF_000160535.1```. To use your own GEMs, remember to edit ```GEM_DIRECTORY``` in the input_parameters.txt to specify the directory that contains your GEMs.
 
