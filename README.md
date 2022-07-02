@@ -37,7 +37,7 @@ Users are required to additionally install the ```cplex``` solver (https://www.i
 
 ## Usage
 
-To run the demonstration, type "python3 main.py" in your terminal.
+To run the demonstration, type "python3 main.py" in your terminal. Follow the following steps to identify missing reactions in your own GEMs:
  
 **Step 1. Download the package**
 
@@ -50,15 +50,19 @@ cd cheshire-gapfilling
 
 All input files should be deposited to the directory ```cheshire-gapfilling/data```. There are three folders:
 
-The folder ```data/gems``` contains GEMs for gapfilling. An an example, we included two GEMs, ```GCF_000005845.2``` and ```GCF_000160535.1```. To use your own GEMs, remember to edit ```GEM_DIRECTORY``` in the input_parameters.txt to specify the directory that contains your GEMs.
+1. The folder ```data/gems``` contains GEMs to be tested. Each GEM is a xml file.
 
-The folder ```data/pools``` contains a reaction pool that provides candidates of missing reactions. As an example, we included a pool constructed from the BiGG database (```bigg_universe.xml```). To use your own pool, rename it to "". If your pool is constructed from a biochemical reaction database other than BiGG (e.g., ModelSeed), edit ```REACTION_POOL``` and ```EX_SUFFIX``` in the input_parameters.txt to specify the path to the pool file and the suffix of exchange reactions used in your pool respectively. Also edit ```NAMESPACE``` in the same file to indicate which namespace of biochemical reaction database is used. We currently only support ```bigg``` and ```modelseed```.
+2. The folder ```data/pools``` contains a reaction pool under name ```universe.xml```. Each pool is a GEM that has the extension ```.xml```. To use your own pool, remember to rename it to ```universe.xml```. Also remember to edit ```EX_SUFFIX``` and ```NAMESPACE``` in the input_parameters.txt to specify the suffix of exchange reactions and which namespace of biochemical reaction database is used. For ```NAMESPACE```, we currently only support ```bigg``` and ```modelseed```.
 
-The folder ```data/others``` contain files for gap prediction. For all fermentation compounds listed in ```substrate_exchange_reactions.csv```, we will test whether this phenotype is potentially missing from the input GEMs and can be recovered by adding reactions predicted by CHESHIRE. To use your own list of fermentation compounds, edit ```SUBSTRATE_EX_RXNS``` in the input_parameters.txt to specify the path to your file. Additionally, The file ```media.csv``` specifies the culture medium (compound ID and maximum uptake flux) used to simulate the GEMs. To use your own culture medium file, edit ```CULTURE_MEDIUM``` in the input_parameters.txt to specify the file location. Make sure that the medium file have columns ```compound``` and the namespace (contains maximum uptake flux) you specified in ```NAMESPACE``` in the input_parameters.txt. 
+3. The folder ```data/fermentation``` contains two files for GEM simulations. For each pair of input and gapfilled GEMs, our algorithm simulates their fermentation phenotypes and, if the phenotype is positiv in the gapfilled GEM but negative in the input GEM, we identity and output the minimum number of reactions among the to candidates that allow the phenotypic change (column ```key_rxns``` in ```results/gaps/suggested_gaps/csv```). The file ```substrate_exchange_reactions.csv``` contains a list of fermentation compounds that we will search for missing phenotypes in the input GEMs. The file requires at least two columns, including a column ```compound``` to specify the conventional compound  names (e.g., Sucrose) and a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs (e.g., sucr) in the GEMs. To use your own list of fermentation compounds, remembe to rename it to ```substrate_exchange_reactions.csv```. Additionally, the file ```media.csv``` specifies the culture medium used to simulate the GEMs. This file also requires at leas two columns, including a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs in the GEMs and another column ```flux``` to specify the maximum uptake flux for each culture medium component.
 
-Step 3. Setup parameters. Firs of all, CHESHIRE has two main programs: (1) ranking the candidate reactions in the reaction pool based on the predicted scores (i.e., likelihoo of being ) and (2) among the predicted reactions, find out the key reactions which lead to positive phenotypic predictiosn that are potentially missing in the input GEMs. The second program is time-consuming if too many reactions are added. To run th first step only, comment out ```validate()``` in the main.py.
+***Step 3. Setup simulation parameters***
+
+Firs of all, CHESHIRE has two main programs: (1) ranking the candidate reactions in the reaction pool based on the predicted scores (i.e., likelihoo of being ) and (2) among the predicted reactions, find out the key reactions which lead to positive phenotypic predictiosn that are potentially missing in the input GEMs. The second program is time-consuming if too many reactions are added. To run th first step only, comment out ```validate()``` in the main.py.
 
 Other parameters that are not mentioned in Step 2 are discussed below:
+```GEM_DIRECTORY```: directory where GEMs are stored. DO NOT CHANGE.
+```REACTION_POOL```: directory of reaction pool. DO NOT CHANGE.
 ```GAPFILLED_RXNS_DIRECTORY```: directory which contains scores of candidate reactions in the pool. DO NOT CHANGE the default folder.
 ```NUM_GAPFILLED_RXNS_TO_ADD```: number of top reactions predicted by CHESHIRE will be added to the GEMs for fermentation test.
 ```ADD_RANDOM_RXNS```: a boolean value (0/1) indicating whether random reactions from the pool are added to the GEMs for fermentation test.
@@ -70,9 +74,11 @@ Other parameters that are not mentioned in Step 2 are discussed below:
 ```ANAEROBIC```: a boolean value indicating whether the fermentation test is performed in anaerobic condition. If yes, then reactions involving oxygen molecules will be skipped during reaction addition.
 ```BATCH_SIZE```: An integer to indicate how many reactions are added in a batch (together). If RESOLVE_EGC is true, reaction needs to be added one by one because the occurance of EGC may depends on multiple reactions that are added. By setting the batch size to a small number (e.g., 10), we wil add 10 reactions in a batch and add the next batch if this batch does not result in EGC. If an EGC is found, then we go back to add the reactions 1by1 . 
 
-Step 4. Run gapfilling by ```python3 main.py```.
+***Step 4. Run CHESHIRE by ```python3 main.py```***
 
-Step 5. Interpret the results. A folder ```results``` will be generated automatically. It contains three subfolders:
+***Step 5. Interpret the results***
+
+A folder ```results``` will be generated automatically. It contains three subfolders:
 
 1. scores: Predicted scores for each GEM. Rows are reaction IDs from the pool and columns are each individual prediction. By default, we run it twice. To change this number, edit ```config.py``` and change the default of parameter ```xxx``` to the number you want.
 2. gaps: suggested gaps include fermentation simualtions for all GEMs. The columns are 
