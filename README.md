@@ -60,27 +60,48 @@ All input files should be deposited to the directory ```cheshire-gapfilling/data
 
 Firs of all, CHESHIRE has two main programs: (1) score the candidate reactions in the pool for their likelihood of being missing in the input GEMs; and (2) among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs. The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by ```NUM_GAPFILLED_RXNS_TO_ADD``` in the input_parameters.txt). ***If you only want the scores and rankings of candidate reactions, comment out ```validate()``` in the main.py***.
 
-Other parameters that are not mentioned in Step 2 are discussed below:
-```GEM_DIRECTORY```: directory where GEMs are stored. DO NOT CHANGE.
-```REACTION_POOL```: directory of reaction pool. DO NOT CHANGE.
-```GAPFILLED_RXNS_DIRECTORY```: directory which contains scores of candidate reactions in the pool. DO NOT CHANGE the default folder.
-```NUM_GAPFILLED_RXNS_TO_ADD```: number of top reactions predicted by CHESHIRE will be added to the GEMs for fermentation test.
-```ADD_RANDOM_RXNS```: a boolean value (0/1) indicating whether random reactions from the pool are added to the GEMs for fermentation test.
-```NUM_CPUS```: number of CPUs used for adding reactions. Note that the first program that predicts scores is not parallelized.
-```RESOLVE_EGC```: a boolean value (0/1) indicating whether it takes extra time to resolve energy-generating cycles.
-```OUTPUT_DIRECTORY```: the directory that suggested gaps will be outputed to.
-```OUTPUT_FILENAME```: file name of suggested gaps.
-```FLUX_CUTOFF```: a fermentation phenotype is considered as positive if the maximum secretion flux is larger than the cutoff value.
-```ANAEROBIC```: a boolean value indicating whether the fermentation test is performed in anaerobic condition. If yes, then reactions involving oxygen molecules will be skipped during reaction addition.
-```BATCH_SIZE```: An integer to indicate how many reactions are added in a batch (together). If RESOLVE_EGC is true, reaction needs to be added one by one because the occurance of EGC may depends on multiple reactions that are added. By setting the batch size to a small number (e.g., 10), we wil add 10 reactions in a batch and add the next batch if this batch does not result in EGC. If an EGC is found, then we go back to add the reactions 1by1 . 
+All simulation parameters are defined in the input_parameters.txt:
+
+```CULTURE_MEDIUM``` (mandatory): filepath of culture medium. For the moment, use ```./data/fermentation/media.csv``` always.
+
+```REACTION_POOL``` (mandatory): filepath of reaction pool. Note that the reaction pool should use the same namespace (e.g., BiGG, ModelSeed) as the GEM files. For the moment, use ```./data/pools/universe.xml``` always.
+
+```GEM_DIRECTORY``` (mandatory): directory of input GEMs. For the moment, use ```./data/gems/``` always.
+
+```GAPFILLED_RXNS_DIRECTORY``` (mandatory): filepath of candidate reaction scores. For the moment, use ```./results/scores``` always.
+
+```NUM_GAPFILLED_RXNS_TO_ADD``` (mandatory): number of top candidate reactions predicted by CHESHIRE to be added to the input GEMs for the fermentation test.
+
+```ADD_RANDOM_RXNS``` (mandatory): a boolean value (0/1). If true, we will randomly select ```NUM_GAPFILLED_RXNS_TO_ADD``` reactions from the reaction pool, instead of using reactions with highest CHESHIRE scores.
+
+```SUBSTRATE_EX_RXNS``` (mandatory): filepath of fermentation compounds to be tested. For the moment, use ```./data/fermentation/substrate_exchange_reactions.csv``` always.
+
+```NUM_CPUS``` (optional, default = 1): number of CPUs used for simulations in ```validate()```. Note that the first program ```predict()``` that outputs reaction scores is not parallelized.
+
+```EX_SUFFIX``` (optional, default = "_e"): suffix of exchange reactions
+
+```RESOLVE_EGC``` (optional, default = 1): a boolean value (0/1). If true, it takes extra time to resolve energy-generating cycles (see our manuscript for how we resolve the EGCs).
+
+```OUTPUT_DIRECTORY``` (optional, default = "./results/gaps"): output directory of simulation results.
+
+```OUTPUT_FILENAME``` (optional, default = "suggested_gaps.csv"): filename of simulation results to output.
+
+```FLUX_CUTOFF``` (optional, default = 1e-5): a fermentation phenotype is considered as positive if the maximum secretion flux is larger than the cutoff value.
+
+```ANAEROBIC``` (optional, default = 1): a boolean value. If true, candidate reactions involving oxygen molecules will be skipped during gapfilling and simulations.
+
+```BATCH_SIZE``` (optional, default = 10): An integer to indicate how many reactions are added in a batch (together) during gapfilling. We test for EGC after each batch and if EGC is found, reactions in the batch will be added one by one.
+
+```NAMESPACE``` (optional, default = "bigg"): Namespace of GEMs and reaction pool. Currently, we only support BiGG (```bigg```) and ModelSeed (```modelseed```).
 
 **Step 4. Run CHESHIRE by ```python3 main.py```**
 
 **Step 5. Interpret the results**
 
-A folder ```results``` will be generated automatically. It contains three subfolders:
+The output files will be saved to the folder ```cheshire-gapfilling/results```. The directory contains three subfolders:
 
 1. scores: Predicted scores for each GEM. Rows are reaction IDs from the pool and columns are each individual prediction. By default, we run it twice. To change this number, edit ```config.py``` and change the default of parameter ```xxx``` to the number you want.
+
 2. gaps: suggested gaps include fermentation simualtions for all GEMs. The columns are 
 minimum__no_gapfill: minimum flux of the input GEM (lower bound of flux variability analysis)
 maximum__no_gapfill: maximum flux of the input GEM (upper bound of flux variability analysis)
@@ -98,4 +119,4 @@ num_rxns_to_add: number of reactions added during gapfilling
 rxn_ids_added: which reactions have been added
 key reactions: if we found a fermentation phenotypic change from 0 (input GEM) to 1 (gapfilled GEM), we used linear-mixed effects model to determine the minimum number of reactions that are necessary to achieve this phenotypic transition.
 
-num_rxns_to_add: number of reactions added during gapfilling
+3. num_rxns_to_add: number of reactions added during gapfilling
