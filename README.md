@@ -56,9 +56,9 @@ All input files should be deposited to the directory ```cheshire-gapfilling/data
 
 3. The folder ```data/fermentation``` contains two files for GEM simulations. For each pair of input and gapfilled GEMs, our algorithm simulates their fermentation phenotypes and, if the phenotype is positiv in the gapfilled GEM but negative in the input GEM, we identity and output the minimum number of reactions among the to candidates that allow the phenotypic change (column ```key_rxns``` in ```results/gaps/suggested_gaps/csv```). The file ```substrate_exchange_reactions.csv``` contains a list of fermentation compounds that we will search for missing phenotypes in the input GEMs. The file requires at least two columns, including a column ```compound``` to specify the conventional compound  names (e.g., Sucrose) and a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs (e.g., sucr) in the GEMs. To use your own list of fermentation compounds, remembe to rename it to ```substrate_exchange_reactions.csv```. Additionally, the file ```media.csv``` specifies the culture medium used to simulate the GEMs. This file also requires at leas two columns, including a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs in the GEMs and another column ```flux``` to specify the maximum uptake flux for each culture medium component.
 
-***Step 3. Setup simulation parameters***
+**Step 3. Setup simulation parameters**
 
-Firs of all, CHESHIRE has two main programs: (1) ranking the candidate reactions in the reaction pool based on the predicted scores (i.e., likelihoo of being ) and (2) among the predicted reactions, find out the key reactions which lead to positive phenotypic predictiosn that are potentially missing in the input GEMs. The second program is time-consuming if too many reactions are added. To run th first step only, comment out ```validate()``` in the main.py.
+Firs of all, CHESHIRE has two main programs: (1) score the candidate reactions in the pool for their likelihood of being missing in the input GEMs; and (2) among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs. The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by ```NUM_GAPFILLED_RXNS_TO_ADD``` in the input_parameters.txt). ***If you only want the scores and rankings of candidate reactions, comment out ```validate()``` in the main.py***.
 
 Other parameters that are not mentioned in Step 2 are discussed below:
 ```GEM_DIRECTORY```: directory where GEMs are stored. DO NOT CHANGE.
@@ -74,9 +74,9 @@ Other parameters that are not mentioned in Step 2 are discussed below:
 ```ANAEROBIC```: a boolean value indicating whether the fermentation test is performed in anaerobic condition. If yes, then reactions involving oxygen molecules will be skipped during reaction addition.
 ```BATCH_SIZE```: An integer to indicate how many reactions are added in a batch (together). If RESOLVE_EGC is true, reaction needs to be added one by one because the occurance of EGC may depends on multiple reactions that are added. By setting the batch size to a small number (e.g., 10), we wil add 10 reactions in a batch and add the next batch if this batch does not result in EGC. If an EGC is found, then we go back to add the reactions 1by1 . 
 
-***Step 4. Run CHESHIRE by ```python3 main.py```***
+**Step 4. Run CHESHIRE by ```python3 main.py```**
 
-***Step 5. Interpret the results***
+**Step 5. Interpret the results**
 
 A folder ```results``` will be generated automatically. It contains three subfolders:
 
