@@ -1,7 +1,7 @@
 # CHESHIRE
 ## Overview
 
-GEnome-scale Metabolic models (GEMs) are powerful tools to predict cellular metabolism and physiological states in living organisms. However, even highly curated GEMs have gaps (i.e., missing reactions) due to our imperfect knowledge of metabolic processes. Here we present a deep learning-based method -- **CHE**byshev **S**pctral **H**yperl**I**nk p**RE**dictor (```CHESHIRE```) -- to predict missing reactions of GEMs purely from the metabolic network topology. ```CHESHIRE``` takes a metabolic network and a pool of candidate reactions as the input and outputs confidence scores for candidate reactions. Among the top candidates, we further identify key reactions that lead to secretion of fermentation compounds in the gapfilled GEMs. This package contains the source code of our paper:
+GEnome-scale Metabolic models (GEMs) are powerful tools to predict cellular metabolism and physiological states in living organisms. However, even highly curated GEMs have gaps (i.e., missing reactions) due to our imperfect knowledge of metabolic processes. Here we present a deep learning-based method -- **CHE**byshev **S**pctral **H**yperl**I**nk p**RE**dictor (```CHESHIRE```) -- to predict missing reactions of GEMs purely from the metabolic network topology. ```CHESHIRE``` takes a metabolic network and a pool of candidate reactions as the input and outputs confidence scores for candidate reactions. Among the top candidates, we further identify key reactions that lead to secretion of fermentation compounds in the gap-filled GEMs. This package contains the source code of our paper:
 
 Can Chen, Chen Liao, and Yang-Yu Liu. "Teasing out Missing Reactions in Genome-scale Metabolic Networks through Deep Learning." BioRxiv (2022) [[PDF](https://www.biorxiv.org/content/10.1101/2022.06.27.497720v1.full.pdf)].
 
@@ -54,7 +54,7 @@ All input files should be deposited to the directory ```cheshire-gapfilling/data
 
 2. The folder ```data/pools``` contains a reaction pool under name ```universe.xml```. Each pool is a GEM that has the extension ```.xml```. To use your own pool, remember to rename it to ```universe.xml```. Also remember to edit ```EX_SUFFIX``` and ```NAMESPACE``` in the input_parameters.txt to specify the suffix of exchange reactions and which namespace of biochemical reaction database is used. For ```NAMESPACE```, we currently only support ```bigg``` and ```modelseed```.
 
-3. The folder ```data/fermentation``` contains two files for GEM simulations. For each pair of input and gapfilled GEMs, our algorithm simulates their fermentation phenotypes and, if the phenotype is positive in the gapfilled GEM but negative in the input GEM, we identify and output the minimum number of reactions among the top candidates that allow the phenotypic change (column ```key_rxns``` in ```results/gaps/suggested_gaps.csv```). The file ```substrate_exchange_reactions.csv``` contains a list of fermentation compounds that we will search for missing phenotypes in the input GEMs. The file requires at least two columns, including a column ```compound``` to specify the conventional compound  names (e.g., sucrose) and a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs (e.g., sucr) in the GEMs. To use your own list of fermentation compounds, remember to rename it to ```substrate_exchange_reactions.csv```. Additionally, the file ```media.csv``` specifies the culture medium used to simulate the GEMs. This file also requires at least two columns, including a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs in the GEMs and another column ```flux``` to specify the maximum uptake flux for each culture medium component.
+3. The folder ```data/fermentation``` contains two files for GEM simulations. For each pair of input and gap-filled GEMs, our algorithm simulates their fermentation phenotypes and, if the phenotype is positive in the gap-filled GEM but negative in the input GEM, we identify and output the minimum number of reactions among the top candidates that allow the phenotypic change (column ```key_rxns``` in ```results/gaps/suggested_gaps.csv```). The file ```substrate_exchange_reactions.csv``` contains a list of fermentation compounds that we will search for missing phenotypes in the input GEMs. The file requires at least two columns, including a column ```compound``` to specify the conventional compound  names (e.g., sucrose) and a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs (e.g., sucr) in the GEMs. To use your own list of fermentation compounds, remember to rename it to ```substrate_exchange_reactions.csv```. Additionally, the file ```media.csv``` specifies the culture medium used to simulate the GEMs. This file also requires at least two columns, including a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs in the GEMs and another column ```flux``` to specify the maximum uptake flux for each culture medium component.
 
 **Step 3. Setup simulation parameters**
 
@@ -88,9 +88,9 @@ All simulation parameters are defined in the input_parameters.txt:
 
 13. ```FLUX_CUTOFF``` (optional, default = 1e-5): a fermentation phenotype is considered as positive if the maximum secretion flux is larger than the cutoff value.
 
-14. ```ANAEROBIC``` (optional, default = 1): a boolean value (0/1). If true, candidate reactions involving oxygen molecules will be skipped during gapfilling and simulations.
+14. ```ANAEROBIC``` (optional, default = 1): a boolean value (0/1). If true, candidate reactions involving oxygen molecules will be skipped during gap-filling and simulations.
 
-15. ```BATCH_SIZE``` (optional, default = 10): An integer to indicate how many reactions are added in a batch (together) during gapfilling. We test for EGC after each batch and if EGC is found, reactions in the batch will be added one by one.
+15. ```BATCH_SIZE``` (optional, default = 10): An integer to indicate how many reactions are added in a batch (together) during gap-filling. We test for EGC after each batch and if EGC is found, reactions in the batch will be added one by one.
 
 16. ```NAMESPACE``` (optional, default = "bigg"): Namespace of GEMs and reaction pool. Currently, we only support BiGG (```bigg```) and ModelSeed (```modelseed```).
 
@@ -104,7 +104,7 @@ The output files will be saved to the folder ```cheshire-gapfilling/results```. 
 
 2. scores: Predicted reaction scores for each GEM. Rows are reaction IDs from the pool and columns are each individual Monte-Carlo simulation run. To rank the reactions, we use the mean scores across all runs. By default, we run it once. To change this number, edit ```config.py``` and change the default of parameter ```num_iter``` to increase the prediction robustness.
 
-3. gaps: Simulations of metabolic fermentation for all input GEMs and their corresponding gapfilled models (i.e., after adding top candidate reactions). Each row is an exchange reaction (i.e., a compound that can be secreted) and columns are explained as follows:
+3. gaps: Simulations of metabolic fermentation for all input GEMs and their corresponding gap-filled models (i.e., after adding top candidate reactions). Each row is an exchange reaction (i.e., a compound that can be secreted) and columns are explained as follows:
 
 ```minimum__no_gapfill```: minimum secretion flux of the input GEM (lower bound of flux variability analysis)
 
@@ -116,23 +116,23 @@ The output files will be saved to the folder ```cheshire-gapfilling/results```. 
 
 ```phenotype__no_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__no_gapfill``` >= ```FLUX_CUTOFF``` (specified in the input_parameters.txt)
 
-```minimum__w_gapfill```: minimum secretion flux of the gapfilled GEM (lower bound of flux variability analysis)
+```minimum__w_gapfill```: minimum secretion flux of the gap-filled GEM (lower bound of flux variability analysis)
 
-```maximum__w_gapfill```: maximum flux of the gapfilled GEM (upper bound of flux variability analysis)
+```maximum__w_gapfill```: maximum flux of the gap-filled GEM (upper bound of flux variability analysis)
 
-```biomass__w_gapfill```: biomass production rate of the gapfilled GEM
+```biomass__w_gapfill```: biomass production rate of the gap-filled GEM
 
-```normalized_maximum__w_gapfill```: ```maximum__w_gapfill``` divided by ```biomass__w_gapfill``` for the gapfilled GEM
+```normalized_maximum__w_gapfill```: ```maximum__w_gapfill``` divided by ```biomass__w_gapfill``` for the gap-filled GEM
 
 ```phenotype__w_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__w_gapfill``` >= ```FLUX_CUTOFF``` (specified in the 
 input_parameters.txt)
 
 ```gem_file```: the GEM file name
 
-```random_rxns```: a binary value (0/1) indicating whether ```gem_file``` is gapfilled by adding random reactions (equal to the value of ```ADD_RANDOM_RXNS``` in the input_parameters.txt)
+```random_rxns```: a binary value (0/1) indicating whether ```gem_file``` is gap-filled by adding random reactions (equal to the value of ```ADD_RANDOM_RXNS``` in the input_parameters.txt)
 
-```num_rxns_to_add```: number of reactions added during gapfilling.
+```num_rxns_to_add```: number of reactions added during gap-filling.
 
 ```rxn_ids_added```: IDs of candidate reactions that have been added
 
-```key reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gapfilled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
+```key reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gap-filled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
