@@ -100,39 +100,39 @@ All simulation parameters are defined in the input_parameters.txt:
 
 The output files will be saved to the folder ```cheshire-gapfilling/results```. The directory contains three subfolders:
 
-1. universe: A merged pool that combines the reactions in the user-provided pool (```./data/pools/universe.xml```) and all reactions in the input GEMs (```./data/gems```).
+1. ```universe```: A merged pool that combines the reactions in the user-provided pool (```./data/pools/universe.xml```) and all reactions in the input GEMs (```./data/gems```).
 
-2. scores: Predicted reaction scores for each GEM. Rows are reaction IDs from the pool and columns are each individual Monte-Carlo simulation run. To rank the reactions, we use the mean scores across all runs. By default, we run it once. To change this number, edit ```config.py``` and change the default of parameter ```num_iter``` to increase the prediction robustness.
+2. ```scores```: Predicted reaction scores for each GEM. Rows are reaction IDs from the pool and columns are each individual Monte-Carlo simulation run. To rank the reactions, we use the mean scores across all runs. By default, we run it once. To change this number, edit ```config.py``` and change the default of parameter ```num_iter``` to increase the prediction robustness.
 
-3. gaps: Simulations of metabolic fermentation for all input GEMs and their corresponding gap-filled models (i.e., after adding top candidate reactions). Each row is an exchange reaction (i.e., a compound that can be secreted) and columns are explained as follows:
+3. ```gaps```: Simulations of metabolic fermentation for all input GEMs and their corresponding gap-filled models (i.e., after adding top candidate reactions). Each row is an exchange reaction (i.e., a compound that can be secreted) and columns are explained as follows:
 
-```minimum__no_gapfill```: minimum secretion flux of the input GEM (lower bound of flux variability analysis)
+* ```minimum__no_gapfill```: minimum secretion flux of the input GEM (lower bound of flux variability analysis)
 
-```maximum__no_gapfill```: maximum secretion flux of the input GEM (upper bound of flux variability analysis)
+* ```maximum__no_gapfill```: maximum secretion flux of the input GEM (upper bound of flux variability analysis)
 
-```biomass__no_gapfill```: biomass production rate of the input GEM
+* ```biomass__no_gapfill```: biomass production rate of the input GEM
 
-```normalized_maximum__no_gapfill```: ```maximum__no_gapfill``` divided by ```biomass__no_gapfill``` for the input GEM
+* ```normalized_maximum__no_gapfill```: ```maximum__no_gapfill``` divided by ```biomass__no_gapfill``` for the input GEM
 
-```phenotype__no_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__no_gapfill``` >= ```FLUX_CUTOFF``` (specified in the input_parameters.txt)
+* ```phenotype__no_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__no_gapfill``` >= ```FLUX_CUTOFF``` (specified in the input_parameters.txt)
 
-```minimum__w_gapfill```: minimum secretion flux of the gap-filled GEM (lower bound of flux variability analysis)
+* ```minimum__w_gapfill```: minimum secretion flux of the gap-filled GEM (lower bound of flux variability analysis)
 
-```maximum__w_gapfill```: maximum flux of the gap-filled GEM (upper bound of flux variability analysis)
+* ```maximum__w_gapfill```: maximum flux of the gap-filled GEM (upper bound of flux variability analysis)
 
-```biomass__w_gapfill```: biomass production rate of the gap-filled GEM
+* ```biomass__w_gapfill```: biomass production rate of the gap-filled GEM
 
-```normalized_maximum__w_gapfill```: ```maximum__w_gapfill``` divided by ```biomass__w_gapfill``` for the gap-filled GEM
+* ```normalized_maximum__w_gapfill```: ```maximum__w_gapfill``` divided by ```biomass__w_gapfill``` for the gap-filled GEM
 
-```phenotype__w_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__w_gapfill``` >= ```FLUX_CUTOFF``` (specified in the 
+* ```phenotype__w_gapfill```: a binary value (0/1) indicating whether ```normalzied_maximum__w_gapfill``` >= ```FLUX_CUTOFF``` (specified in the 
 input_parameters.txt)
 
-```gem_file```: the GEM file name
+* ```gem_file```: the GEM file name
 
-```random_rxns```: a binary value (0/1) indicating whether ```gem_file``` is gap-filled by adding random reactions (equal to the value of ```ADD_RANDOM_RXNS``` in the input_parameters.txt)
+* ```random_rxns```: a binary value (0/1) indicating whether ```gem_file``` is gap-filled by adding random reactions (equal to the value of ```ADD_RANDOM_RXNS``` in the input_parameters.txt)
 
-```num_rxns_to_add```: number of reactions added during gap-filling.
+* ```num_rxns_to_add```: number of reactions added during gap-filling.
 
-```rxn_ids_added```: IDs of candidate reactions that have been added
+* ```rxn_ids_added```: IDs of candidate reactions that have been added
 
-```key reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gap-filled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
+* ```key reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gap-filled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
