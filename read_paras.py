@@ -22,6 +22,7 @@ def read(input_file):
 
     # The following fields are optional
     optional_fields = {
+        'MIN_PREDICTED_SCORES': 0.9995, # candidate reactions w/ predicted scores below this cutoff are excluded
         'NUM_CPUS': 1,  # number of cpus to use. use -1 if using all cpus
         'EX_SUFFIX': "_e",  # exchange reaction suffix
         'RESOLVE_EGC': True,  # whether resolve energy-generating cycle

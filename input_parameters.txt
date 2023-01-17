@@ -1,8 +1,9 @@
 CULTURE_MEDIUM,./data/fermentation/media.csv
-REACTION_POOL,./data/pools/universe.xml
-GEM_DIRECTORY,./data/gems
-GAPFILLED_RXNS_DIRECTORY,./results/scores
-NUM_GAPFILLED_RXNS_TO_ADD,20
+REACTION_POOL,./data/pools/bigg_universe.xml
+GEM_DIRECTORY,./data/zimmermann
+GAPFILLED_RXNS_DIRECTORY,./results/similarity_scores
+NUM_GAPFILLED_RXNS_TO_ADD,200
+MIN_PREDICTED_SCORES,0.9995
 ADD_RANDOM_RXNS,0
 SUBSTRATE_EX_RXNS,./data/fermentation/substrate_exchange_reactions.csv
 NUM_CPUS,1

@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch_geometric.nn as gnn
 from torch_scatter import scatter
+from utils import create_hyperedge_index
 
 
 class CHESHIRE(nn.Module):
@@ -57,8 +58,7 @@ class CHESHIRE(nn.Module):
 
     @staticmethod
     def partition(x, incidence_matrix):
-        row, col = torch.where(incidence_matrix.T)
-        hyperedge_index = torch.cat((col.view(1, -1), row.view(1, -1)), dim=0)
+        hyperedge_index = create_hyperedge_index(incidence_matrix)
         node_set, sort_index = torch.sort(hyperedge_index[0])
         hyperedge_index[1] = hyperedge_index[1][sort_index]
         x = x[node_set.long(), :]
@@ -67,3 +67,6 @@ class CHESHIRE(nn.Module):
         hyperedge_index[1] = index_set
         hyperedge_index[0] = hyperedge_index[0][sort_index]
         return x, hyperedge_index
+
+
+

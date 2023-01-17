@@ -100,8 +100,7 @@ def add_gapfilled_reactions(gem_file, universe, paras):
         df_gapfill = df_gapfill.loc[
             [rid for rid in df_gapfill.index if rid not in model_w_gapfill.reactions and rid in universe.reactions]
         ]
-        df_gapfill['mean_score'] = df_gapfill.mean(axis=1)
-        df_gapfill = df_gapfill.sort_values('mean_score', ascending=False)
+        df_gapfill = df_gapfill[df_gapfill['predicted_scores']>=float(paras['MIN_PREDICTED_SCORES'])].sort_values('similarity_scores')
         candidate_reactions = list(df_gapfill.index)
     print('add_gapfilled_reaction: find %d candidate reactions' % len(candidate_reactions))
 
