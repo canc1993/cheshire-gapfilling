@@ -124,6 +124,6 @@ def predict_fermentation(gem_file, universe, paras):
                     key_rxns.append(np.NaN)
         else:
             key_rxns.append(np.NaN)
-    fva['key_rxns'] = key_rxns
+    fva['essential_rxns'] = key_rxns
 
     return fva
