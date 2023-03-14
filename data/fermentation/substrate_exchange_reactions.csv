@@ -1,0 +1,237 @@
+compound,modelseed,bigg
+Dextrin,cpd11594,dextrin
+Glycogen,cpd00155,glycogen
+N-Acetyl-D-Galactosamine;N-acetylgalactosamine,cpd00832,acgal
+N-Acetyl-D-Glucosamine;N-acetylglucosamine,cpd00122,acgam
+L-Arabinose;arabinose,cpd00224,arab__L
+D-Arabitol;arabitol,cpd00417,abt__D
+D-Cellobiose;cellobiose,cpd00158,cellb
+D-Fructose;fructose,cpd00082,fru
+L-Fucose;fucose,cpd00751,fuc__L
+D-Galactose;galactose,cpd00108,gal
+m-Inositol;inositol,cpd00121,inost
+alpha-D-Lactose;lactose,cpd00208,lcts
+Maltose;maltose,cpd00179,malt
+D-Mannitol;mannitol,cpd00314,mnl
+D-Mannose;mannose,cpd00138,man
+D-Melibiose;melibiose,cpd03198,melib
+D-Raffinose;raffinose,cpd00382,raffin
+L-Rhamnose;rhamnose,cpd00396,rmn
+Sucrose;sucrose,cpd00076,sucr
+D-Trehalose;trehalose,cpd00794,tre
+Xylitol,cpd00306,xylt
+Acetic Acid;acetate,cpd00029,ac
+Citric Acid;citrate,cpd00137,cit
+Formic Acid;formate,cpd00047,for
+Alpha-Hydroxybutyric Acid;2-Hydroxybutyrate,cpd03561,2hb
+alpha-Ketobutyric Acid;2-Ketobutyrate,cpd00094,2obut
+Propionic Acid;propionate,cpd00141,ppa
+Succinic Acid;succinate,cpd00036,succ
+Fumaric Acid;fumarate,cpd00106,fum
+L-Alanine;alanine,cpd00035,ala__L
+L-Arginine;arginine,cpd00051,arg__L
+L-Asparagine;asparagine,cpd00132,asn__L
+L-Aspartic Acid;aspartate,cpd00041,asp__L
+L-Cysteine;cysteine,cpd00084,cys__L
+L-Glutamic Acid;glutamate,cpd00023,glu__L
+L-Glutamine;glutamine,cpd00053,gln__L
+L-Histidine;histidine,cpd00119,his__L
+L-Isoleucine;isoleucine,cpd00322,ile__L
+L-Leucine;leucine,cpd00107,leu__L
+L-Lysine;lysine,cpd00039,lys__L
+L-Ornithine;ornithine,cpd00064,orn
+L-Phenylalanine;phenylalanine,cpd00066,phe__L
+L-Proline;proline,cpd00129,pro__L
+L-Serine;serine,cpd00054,ser__L
+L-Threonine;threonine,cpd00161,thr__L
+L-Tryptophan;tryptophan,cpd00065,trp__L
+L-Tyrosine;tyrosine,cpd00069,tyr__L
+L-Valine;valine,cpd00156,val__L
+D-L-Carnitine;carnitine,cpd00266,crn
+Inosine,cpd00246,ins
+Uridine,cpd00249,uri
+Thymidine,cpd00184,thymd
+Glucose-1-Phosphate,cpd00089,g1p
+Acetoin,cpd00361,actn__R
+Butanediol,cpd01947,btd_RR
+Butanol,cpd03662,btoh
+Butyrate;Butyric acid,cpd00211,but
+D-Arabinose;arabinose,cpd00185,arab__D
+D-glucosamine;glucosamine,cpd00276,gam
+D-Lactate;D-Lactic acid;lactate;lactic acid;(R)-Lactate;(R)-Lactic acid,cpd00221,lac__D
+Ethanol,cpd00363,etoh
+Ribitol,cpd00366,rbt
+Gluconate;D-Gluconic Acid,cpd00222,glcn
+Glucuronate;D-Glucuronic Acid,cpd00164,glcur
+Hydrogen sulfide,cpd00239,h2s
+Indole,cpd00359,indole
+L-Lactate;L-Lactic acid;lactate;lactic acid;(S)-Lactate;(S)-Lactic acid,cpd00159,lac__L
+Lyxose,cpd01067,lyx__L
+Matohextrin,cpd01329,malthx
+Methane,cpd01024,ch4
+N-Acetylneuraminate;sialic acid,cpd00232,acnam
+Phenylacetate,cpd00489,4hphac
+Ribose,cpd00105,rib__D
+Xylose,cpd00154,xyl__D
+Chloride,cpd00099,cl
+Cobalt,cpd00149,cobalt2
+Potassium,cpd00205,k
+Phosphate,cpd00009,pi
+Magnesium,cpd00254,mg2
+Calcium,cpd00063,ca2
+Iron,cpd10515,fe2
+Zinc,cpd00034,zn2
+Copper,cpd00058,cu2
+Melitose;raffinose,cpd00382,raffin
+Benzoate,cpd00153,bz
+Sulfate,cpd00048,so4
+Sulfite,cpd00081,so3
+Nitrate,cpd00209,no3
+Nitrite,cpd00075,no2
+NAD,cpd00003,nad
+NADP,cpd00006,nadp
+Pyrophosphate,cpd00012,ppi
+Ammonia,cpd00013,nh4
+FAD,cpd00015,fad
+Pyridoxal phosphate,cpd00016,pydx5p
+S-Adenosyl-L-methionine,cpd00017,amet
+2-Oxoglutarate;α-ketoglutaric acid,cpd00024,akg
+Hydrogen peroxide,cpd00025,h2o2
+Heme,cpd00028,pheme
+GTP,cpd00038,gtp
+GSH,cpd00042,gthrd
+CTP,cpd00052,ctp
+Formaldehyde,cpd00055,fald
+TPP,cpd00056,thmpp
+UTP,cpd00062,utp
+Acetaldehyde,cpd00071,acald
+Urea,cpd00073,urea
+D-glucose-6-phosphate,cpd00079,g6p
+Tetrahydrofolate,cpd00087,thf
+Uracil,cpd00092,ura
+Choline,cpd00098,chol
+Biotin,cpd00104,btn
+D-Alanine,cpd00117,ala__D
+Putrescine,cpd00118,ptrc
+5-10-Methylenetetrahydrofolate,cpd00125,mlthf
+Nicotinamide,cpd00133,ncam
+4-Hydroxybenzoate;4-hydroxy benzoic acid,cpd00136,4hbz
+Glycolate,cpd00139,glyclt
+Acetoacetate,cpd00142,acac
+Aminoethanol,cpd00162,etha
+Calomide,cpd00166,adocbl
+2-keto-3-deoxygluconate;2-dehydro-3-deoxy-D-gluconate,cpd00176,2ddglcn
+Adenosine,cpd00182,adn
+Arachidonate,cpd00188,arachd
+10-Formyltetrahydrofolate,cpd00201,10fthf
+Palmitate,cpd00214,hdca
+Pyridoxal,cpd00215,pydx
+Niacin,cpd00218,nac
+HYXN,cpd00226,hxan
+D-mannose-6-phosphate,cpd00235,man6p
+dGTP,cpd00241,dgtp
+Nickel,cpd00244,ni2
+Pyridoxol,cpd00263,pydxn
+Spermidine,cpd00264,spmd
+Thiosulfate,cpd00268,tsul
+Deoxyguanosine,cpd00277,dgsn
+GABA;gamma-aminobutyric acid,cpd00281,4abut
+Thiamine,cpd00305,thm
+Cytosine,cpd00307,csn
+Xanthine,cpd00309,xan
+Guanosine,cpd00311,gsn
+5-Methyltetrahydrofolate,cpd00345,5mthf
+Nicotinamide ribonucleotide,cpd00355,nmn
+TTP,cpd00357,dttp
+Retinol,cpd00365,retinol
+Cytidine,cpd00367,cytd
+Propanal,cpd00371,ppal
+Folate;Folate,cpd00393,fol
+L-Cysteate,cpd00395,Lcyst
+Deoxyuridine,cpd00412,duri
+Nitric oxide,cpd00418,no
+Pyridoxamine,cpd00419,pydam
+Cob(II)alamin,cpd00423,cbl2
+Deoxyadenosine,cpd00438,dad_2
+Trimethylamine,cpd00441,tma
+4-Aminobenzoate,cpd00443,4abz
+D-Glyceraldehyde,cpd00448,glyald
+"meso-2,6-Diaminopimelate",cpd00516,26dap__M
+Mercury,cpd00531,hg2
+Siroheme,cpd00557,sheme
+L-Idonate,cpd00573,idon__L
+D-Glucarate,cpd00609,glcr
+Cob(I)alamin,cpd00635,cbl1
+D-Methionine,cpd00637,met__D
+Pantothenic acid;Pantothenate,cpd00644,pnto__R
+D-Mucic acid,cpd00652,galct__D
+D-Galactonate,cpd00653,galctn__D
+Deoxycytidine,cpd00654,dcyt
+Nitrous oxide,cpd00659,n2o
+Choline sulfate,cpd00681,chols
+Thiamine phosphate,cpd00793,thmmp
+(R)-3-Hydroxybutanoate,cpd00797,bhb
+Trimethylamine N-oxide,cpd00811,tmao
+Provitamin D3,cpd00857,vitd3
+Sodium,cpd00971,na1
+Cadmium,cpd01012,cd2
+Cyanate,cpd01015,cynt
+Cys-Gly,cpd01017,cgly
+Arsenate,cpd01048,aso4
+Allantoin,cpd01092,alltn
+Decanoate,cpd01107,dca
+Hexanoate,cpd01113,hxa
+Linoleate,cpd01122,lnlc
+Cadaverine,cpd01155,15dap
+Dulcose,cpd01171,galt
+Lanosterol,cpd01188,lanost
+Xanthosine,cpd01217,xtsn
+Thyminose,cpd01242,drib
+Amylotriose,cpd01262,malttr
+Maltotetraose,cpd01399,maltttr
+Vitamin E,cpd01628,avite1
+Dodecanoic acid,cpd01741,ddca
+L-Fucose 1-phosphate,cpd01912,fuc1p__L
+5-Methylthio-D-ribose,cpd01981,5mtr
+Bactoprenyl diphosphate,cpd02229,udcpdp
+Isethionate,cpd03048,isetac
+Deoxyinosine,cpd03279,din
+Phenylpropanoate,cpd03343,pppn
+Selenate,cpd03396,sel
+kdo2-lipid iva,cpd03586,kdo2lipid4
+Ursin,cpd03696,arbt
+Ferrichrome,cpd03724,fecrm
+octanoate,cpd03846,octa
+Myristic acid,cpd03847,ttdca
+Arachidic acid,cpd03848,arach
+Arsenite,cpd04098,aso3
+Dimethyl sulfoxide,cpd08021,dmso
+methanesulfonate,cpd08023,mso3
+crotonobetaine,cpd08305,ctbt
+Butyro-betaine,cpd08306,gbbtn
+Sulfoacetate,cpd09878,sulfac
+fe3;iron,cpd10516,fe3
+Molybdate,cpd11574,mobd
+MOPS,cpd11575,mops
+hexanesulfonate,cpd11578,hexs
+ethanesulfonate,cpd11579,ethso3
+gly-pro-L,cpd11588,glypro
+chromate,cpd11595,cro4
+butanesulfonate,cpd11596,butso3
+ARSENOBETAINE,cpd11597,arsenb
+Pectin,cpd11601,pect
+Menaquinone 7,cpd11606,mqn7
+hexadecenoate,cpd15237,hdcea
+octadecenoate,cpd15269,ocdcea
+tetradecenoate,cpd15298,ttdcea
+Maltoheptaose,cpd15494,malthp
+Gly-Leu,cpd15604,glyleu
+Gly-Phe,cpd15605,glyphe
+heptadecanoate (C17:0),cpd15609,hpdca
+3mop;(S)-3-Methyl-2-oxopentanoate,cpd00508,3mop
+Phenylethylamine;Phenethylamine,cpd03161,peamn
+Taurocholate;Taurocholic acid,cpd03047,tchola
+Cholate;Cholic acid,cpd00526,cholate
+Chenodeoxycholate;Chenodiol,cpd01663,C02528
+Deoxycholate;Deoxycholic acid,cpd02733,dchac
+Agmatine,cpd00152,agm
