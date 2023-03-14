@@ -139,4 +139,4 @@ input_parameters.txt)
 
 * ```rxn_ids_added```: IDs of candidate reactions that have been added
 
-* ```key reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gap-filled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
+* ```essential reactions```: If we found a fermentation phenotypic change from 0 (input GEM) to 1 (gap-filled GEM), we used mixed-integer linear programming to determine the minimum number of reactions that are necessary to achieve this phenotypic transition. Otherwise this field is left empty.
