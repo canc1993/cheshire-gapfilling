@@ -3,7 +3,7 @@
 
 GEnome-scale Metabolic models (GEMs) are powerful tools to predict cellular metabolism and physiological states in living organisms. However, even highly curated GEMs have gaps (i.e., missing reactions) due to our imperfect knowledge of metabolic processes. Here we present a deep learning-based method -- **CHE**byshev **S**pctral **H**yperl**I**nk p**RE**dictor (```CHESHIRE```) -- to predict missing reactions of GEMs purely from the metabolic network topology. ```CHESHIRE``` takes a metabolic network and a pool of candidate reactions as the input and outputs confidence scores for candidate reactions. Among the top candidates, we further identify key reactions that lead to secretion of fermentation compounds in the gap-filled GEMs. This package contains the source code of our paper:
 
-Can Chen*, Chen Liao*, and Yang-Yu Liu. "Teasing out Missing Reactions in Genome-scale Metabolic Networks through Hypergraph Learning." Nature Communications, vol. 14, p.2375, 20223 [[PDF](https://www.nature.com/articles/s41467-023-38110-7)].
+Can Chen*, Chen Liao*, and Yang-Yu Liu. "Teasing out Missing Reactions in Genome-scale Metabolic Networks through Hypergraph Learning." Nature Communications, vol. 14, p.2375, 2023 [[PDF](https://www.nature.com/articles/s41467-023-38110-7)].
 
 ## System Requirements
 
