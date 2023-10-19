@@ -1,0 +1,80 @@
+bigg_id,name,model_list
+BIOMASS_Ec_iJO1366_core_53p95M,e. coli biomass objective function (ijo1366) - core - with 53.95 gam estimate,iZ_1308; iWFL_1372; iUTI89_1310; iUMNK88_1353; iY75_1357; iEC55989_1330; iJO1366; iECDH1ME8569_1439; iECD_1391; iEC042_1314; iEcDH1_1363; ic_1306; iB21_1397; iECB_1328; iAPECO1_1312; iSF_1195; iECABU_c1320; iECBD_1354; iBWG_1329; iE2348C_1286; iECDH10B_1368; iECO26_1355; iECO103_1326; iECP_1309; iEcolC_1368; iECNA114_1301; iEcE24377_1341; iECED1_1282; iECIAI39_1322; iECIAI1_1343; iECO111_1330; iECs_1301; iEcHS_1320; iECH74115_1262; iECOK1_1307; iECS88_1305; iEC1372_W3110; iEC1344_C; iEC1356_Bl21DE3; iEC1364_W; iEC1368_DH5a; iEC1349_Crooks; iETEC_1333; iSDY_1059; iUMN146_1321; iSFxv_1172; iEKO11_1354; iSFV_1184; iG2583_1286; iECSF_1327; iSSON_1240; iECSP_1301; iECSE_1348; iLF82_1304; iNRG857_1313; iS_1188; iECW_1372; iEcSMS35_1347; iSbBS512_1146; iECUMN_1333; iSBO_1134
+BIOMASS_Ec_iAF1260_core_59p81M,e. coli biomass objective function (iaf1260) - core - with 59.81 gam estimate,iAF1260; STM_v1_0; iAF1260b; iYS1720
+BIOMASS_SC5_notrace,biomass sc5 notrace,iMM904
+BIOMASS_SA_2a,sa biomass 2 without ions,iSB619
+BIOMASS_SA_2b,sa biomass 2 without ions or dgdg,iSB619
+BIOMASS_SA_6a,sa biomass 6 without ions,iSB619
+BIOMASS_SA_6b,sa biomass 6 without ions,iSB619
+BIOMASS_SA_nuc_only,sa biomass only nucleutides,iSB619
+BIOMASS_SC4_bal,biomass sc4 bal,iND750
+BIOMASS_KT_TEMP,biomasskt temp,iJN746
+BIOMASS_HP_published,biomasshp published,iIT341
+BIOMASS_Mtb_9_60atp,biomass mtb 9 60atp,iNJ661
+BIOMASS_Ecoli,biomassecoli,iJR904
+BIOMASS_Ecoli_core_w_GAM,biomass objective function with gam,e_coli_core
+BIOMASS_,biomass,iYL1228
+BIOMASS_iRR1083,biomass equation from http://www.biomedcentral.com/1752-0509/3/38,STM_v1_0
+BIOMASS_Gm_GS15_WT_79p20M,geobacter metallireducens biomass objective function (iaf987) - wt - with 79.20 gam estimate,iAF987
+BIOMASS_Gm_GS15_core_79p20M,geobacter metallireducens biomass objective function (iaf987) - core - with 79.20 gam estimate,iAF987
+BIOMASS_Ec_SynAuto,autotrophic biomass ecuation,iJN678
+BIOMASS_Ec_SynMixo,mixotrophic biomass ecuation,iJN678
+BIOMASS_Ec_SynHetero,heterotrophic biomass ecuation,iJN678
+BIOMASS_mm_1_no_glygln,biomass mm 1 no glygln,iMM1415
+BIOMASS_Mb_30,mb biomass 30,iAF692
+BIOMASS_Cl_DSM_WT_46p666M1,clostridium ljungdahlii biomass objective function (iaf1xxx) - wt - with 46.666 gam estimate,iHN637
+BIOMASS_Chlamy_hetero,biomass (heterotrophic),iRC1080
+BIOMASS_LLA,biomass equation lla specific,iNF517
+BIOMASS_LLA_noATPnoH,biomass equation lla specific,iNF517
+BIOMASS_Ec_iML1515_core_75p37M,e. coli biomass objective function (iml1515) - core - with 75.37 gam estimate,iML1515
+BIOMASS_PIGMENTS,biomass: pigments and xanthophylls,iJB785
+BIOMASS_DNA,biomass: dna,iJB785
+BIOMASS_CELL_WALL,biomass: cell wall (lps and peptidoglycan),iJB785
+BIOMASS_COFACTORS,biomass: cofactor pool,iJB785
+BIOMASS_RNA,biomass: rna,iJB785
+BIOMASS_mem_lipids_c,biomass component: membrane lipids,iLB1027_lipid
+BIOMASS_TAG_c,biomass component: triacylglycerides (tags),iLB1027_lipid
+bof_c,biomass equation for model testing,iLB1027_lipid
+BIOMASS_RNA_c,biomass component: rna,iLB1027_lipid
+BIOMASS_maintenance,biomass maintenance reaction without replication precursors,Recon3D
+BIOMASS_maintenance_noTrTr,"biomass maintenance reaction without replication, transcription, and translation precursors",Recon3D
+BIOMASS__4,biomass,iAM_Pk459; iAM_Pf480; iAM_Pc455; iAM_Pb448; iAM_Pv461
+BIOMASS_KT2440_Core2,biomass p putida kt2440  aa dna rna atp murein fa ions ,iJN1463
+BIOMASS_KT2440_WT3,biomass p putida kt2440  aa dna rna atp murein fa ions soluble ,iJN1463
+BIOMASS_iRR1083_metals_1,biomass equation from http://www.biomedcentral.com/1752-0509/3/38 including metals from iaf1260 biomass function,iYS1720
+BIOMASS_invivo,biomass equation adapted to in vivo conditions,iYS1720
+BIOMASS_Ec_iJO1366_WT_53p95M,e. coli biomass objective function (ijo1366) - wt - with 53.95 gam estimate,iECNA114_1301; iEcolC_1368; iECs_1301; iECO111_1330; iECED1_1282; iECP_1309; iECOK1_1307; iECDH10B_1368; iEcHS_1320; iECIAI1_1343; iECS88_1305; iECIAI39_1322; iECH74115_1262; iECO103_1326; iECO26_1355; iEcE24377_1341; iEcDH1_1363; iAPECO1_1312; iECDH1ME8569_1439; iECD_1391; iSF_1195; iEC042_1314; ic_1306; iJO1366; iBWG_1329; iECABU_c1320; iB21_1397; iECB_1328; iECBD_1354; iEC55989_1330; iE2348C_1286; iECW_1372; iECSF_1327; iETEC_1333; iECUMN_1333; iEKO11_1354; iLF82_1304; iS_1188; iECSE_1348; iSBO_1134; iUMN146_1321; iG2583_1286; iSFV_1184; iSFxv_1172; iSSON_1240; iSDY_1059; iECSP_1301; iSbBS512_1146; iEcSMS35_1347; iNRG857_1313; iEC1344_C; iEC1356_Bl21DE3; iEC1372_W3110; iEC1349_Crooks; iEC1368_DH5a; iEC1364_W; iUMNK88_1353; iZ_1308; iWFL_1372; iUTI89_1310; iY75_1357
+BIOMASS_SA_1a,s aureus biomass based on b subtilis precursors,iSB619
+BIOMASS_SA_3a,sa biomass 3 without ions,iSB619
+BIOMASS_SA_3b,sa biomass 3 without ions,iSB619
+BIOMASS_SA_4a,sa biomass 4 without ions,iSB619
+BIOMASS_SA_5a,sa biomass 5 without ions,iSB619
+BIOMASS_SA_7a,sa biomass 7 without ions,iSB619
+BIOMASS_SA_7b,sa biomass 7 without ions,iSB619
+BIOMASS_SA_8a,sa biomass 8 without ions,iSB619
+BIOMASS_SA_lipids_only,sa biomass 2 lipids only,iSB619
+BIOMASS_SA_only_AA,sa biomass only amino acids,iSB619
+BIOMASS_25C,25c biomass,iPC815
+BIOMASS_37C,37c biomass,iPC815
+BIOMASS_iRR1083_metals,biomass equation from http://www.biomedcentral.com/1752-0509/3/38 including metals from iaf1260 biomass function,STM_v1_0
+BIOMASS_Ecoli_TM,biomass thermotoga - values taken from ijr904,iLJ478
+BIOMASS_Chlamy_auto,biomass (autotrophic),iRC1080
+BIOMASS_Chlamy_mixo,biomass (mixotrophic),iRC1080
+BIOMASS_BS_10,b subtilis biomass  demand ,iYO844
+BIOMASS_cho,biomass function,iCHOv1; iCHOv1_DG44
+BIOMASS_cho_producing,biomass for a producing cell line,iCHOv1
+BIOMASS_Ec_iML1515_WT_75p37M,e. coli biomass objective function (iml1515) - wt - with 75.37 gam estimate,iML1515
+BIOMASS__1,biomass objective function,iJB785
+BIOMASS_PROTEIN,biomass: protein,iJB785
+BIOMASS_CARB,biomass: carbohydrates (storage and misc.),iJB785
+DM_biomass_c,demand biomass c,iCN900; iLB1027_lipid; iCN718
+BIOMASS_pigm_h,biomass component: chlorophylls and pigments,iLB1027_lipid
+BIOMASS_carb_c,biomass component: carbohydrates,iLB1027_lipid
+BIOMASS_DNA_c,biomass component: dna,iLB1027_lipid
+BIOMASS_pro_c,biomass component: proteins and amino acids,iLB1027_lipid
+BIOMASS_reaction,generic human biomass reaction,Recon3D
+BIOMASS_cho_producing_1,biomass for a producing cell line,iCHOv1_DG44
+BIOMASS_Ec_SynAuto_1,autotrophic biomass growth,iSynCJ816
+BIOMASS_Ec_SynMixo_1,mixotrophic biomass growth,iSynCJ816
+BIOMASS_Ec_SynHetero_1,heterotrophic biomass growth,iSynCJ816
+BIOMASS_iRR1083_1,biomass equation from http://www.biomedcentral.com/1752-0509/3/38,iYS1720
